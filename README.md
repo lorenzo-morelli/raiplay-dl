@@ -1,6 +1,4 @@
-***I'm currently rewriting this script from scratch and the actual commit isn't working***
-
-![builds status](https://github.com/wetcork/raiplay-dl/actions/workflows/build.yaml/badge.svg)
+***Currently rewriting this shit from the ground up...im coming back and fuck Rai***
 
 # raiplay-dl
 
