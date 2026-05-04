@@ -1,2 +1,5 @@
 build
 *.spec
+.idea
+.venv
+*.mp4*

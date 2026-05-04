@@ -1,2 +1,4 @@
 requests
 natsort
+yt-dlp
+rich
