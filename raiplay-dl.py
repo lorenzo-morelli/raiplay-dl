@@ -168,6 +168,12 @@ def pick_yt_dlp_format(info, format): # Pick the closest yt-dlp format to the re
     if not available:
         return None
 
+    # If the user passed a yt-dlp format id (e.g. 'hls-Italiano-1'), prefer it when present
+    if format:
+        for f in available:
+            if str(f.get('format_id')) == str(format):
+                return f
+
     if format == 'best':
         return max(available, key=lambda f: (f.get('height') or 0, f.get('tbr') or 0))
 
@@ -217,6 +223,8 @@ def download_with_yt_dlp(page_url, file_path, format_id): # Download using yt-dl
         'keepvideo': False,
         'quiet': False,
         'progress_hooks': [],
+        'hls_prefer_native': False,
+        'prefer_ffmpeg': True,
     }
     if format_id:
         ydl_opts['format'] = format_id
